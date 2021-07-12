@@ -19,8 +19,7 @@ export default class TitleScene extends Phaser.Scene {
             this.optionsButton = this.add.image(this.game.config.width / 2, 500, "options").setScale(0.4).setInteractive({useHandCursor:true})
         ]
 
-        this.title = this.add.text(this.game.config.width / 20, 50, "STAR SWITCH").setStyle({fontFamily: 'Londrina Solid'})
-        this.title.setOrigin(0,0)
+        this.title = this.add.sprite(this.game.config.width / 2, 150, 'title_v1').play('title_change').setScale(0.3)
 
         this.changeSpeed = [ 0.5, 0.3, 0.7, 0.2 ]
 
@@ -41,5 +40,7 @@ export default class TitleScene extends Phaser.Scene {
             this.background[i].tilePositionX -= this.changeSpeed[i]
         }
     }
+
+
 
 }
